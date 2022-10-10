@@ -1,5 +1,6 @@
 const randomRgb = document.getElementById('randomRgb');
 const colorBox = document.querySelectorAll('.colorBox');
+const reset = document.querySelector('.reset');
 
 let numSquares = 9;
 let colors = [];
@@ -13,9 +14,20 @@ function makeColor() {
   return 'rgb(' + r + ',' + g + ',' + b + ')';
 }
 
-randomRgb.innerHTML = makeColor();
-
-for (let i = 0; i < colorBox.length; i++) {
-  colorBox[i].style.backgroundColor = makeColor();
+function colorPick() {
+  for (let i = 0; i < colorBox.length; i++) {
+    colors.push((colorBox[i].style.backgroundColor = makeColor()));
+  }
+  pickedColor = colors[Math.floor(Math.random() * colors.length)];
+  randomRgb.innerHTML = pickedColor;
 }
-// querySelectorAll 은 for문을 통해서만 변환
+
+function resetColor() {
+  colors = [];
+  colorPick();
+  // querySelectorAll 은 for문을 통해서만 변환
+}
+
+reset.addEventListener('click', resetColor);
+
+colorPick();
