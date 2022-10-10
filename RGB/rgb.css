@@ -1,0 +1,48 @@
+h2 {
+  font-size: 70px;
+  display: flex;
+  justify-content: center;
+}
+
+#randomRgb {
+  display: flex;
+  justify-content: center;
+  font-size: 60px;
+  font-weight: 600;
+  margin-bottom: 70px;
+}
+
+#navBar {
+  display: flex;
+  justify-content: space-evenly;
+  background-color: black;
+  margin-bottom: 40px;
+}
+
+#navBar > button {
+  background-color: aliceblue;
+  border: none;
+  padding: 10px 20px;
+}
+
+#navBar > button:hover {
+  color: white;
+  background-color: rgb(20, 20, 20);
+}
+
+.message {
+  display: flex;
+  align-items: center;
+  color: white;
+}
+
+.color {
+  display: flex;
+  justify-content: center;
+}
+
+.colorBox {
+  padding: 90px;
+  margin: 10px;
+  border-radius: 20px;
+}
