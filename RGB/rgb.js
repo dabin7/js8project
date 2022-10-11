@@ -1,7 +1,8 @@
 const randomRgb = document.getElementById('randomRgb');
+const wrapper = document.getElementById('wrapper');
 const colorBox = document.querySelectorAll('.colorBox');
 const reset = document.querySelector('.reset');
-const colorBoxs = document.getElementsByClassName('.color');
+const message = document.querySelector('.message');
 
 let colors = [];
 let pickedColor;
@@ -29,6 +30,10 @@ function clickColor(event) {
       colorBox[i].style.backgroundColor = pickedColor;
     }
     randomRgb.style.backgroundColor = pickedColor;
+    message.textContent = 'correct !';
+  } else {
+    message.textContent = 'retry !';
+    event.target.classList.add('hidden');
   }
   //clickRgb === pickedColor ?? 완전히 같아야됨. 띄어쓰기까지
 }
@@ -37,10 +42,13 @@ function resetColor() {
   colors = [];
   colorPick();
   randomRgb.style.backgroundColor = '';
+  for (let i = 0; i < colorBox.length; i++) {
+    colorBox[i].classList.remove('hidden');
+  }
   // querySelectorAll 은 for문을 통해서만 변환
 }
 
 reset.addEventListener('click', resetColor);
-window.addEventListener('click', clickColor);
+wrapper.addEventListener('click', clickColor);
 
 colorPick();
