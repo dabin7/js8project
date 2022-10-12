@@ -18,42 +18,49 @@ h2 {
 
 #navBar {
   display: flex;
-  justify-content: space-evenly;
-  background-color: black;
+  justify-content: center;
+  background-color: gray;
   margin-bottom: 40px;
+  text-transform: uppercase;
+  font-size: 16px;
 }
 
-#navBar > button {
-  background-color: aliceblue;
+button {
+  background-color: gray;
   border: none;
   padding: 10px 20px;
+  color: white;
 }
 
-#navBar > button:hover {
-  color: white;
-  background-color: rgb(20, 20, 20);
+button:hover {
+  color: black;
+  background-color: white;
+}
+
+.selected {
+  color: black;
+  background-color: white;
 }
 
 .message {
   display: flex;
   align-items: center;
+  justify-content: center;
   color: white;
-  text-transform: uppercase;
+  width: 20%;
 }
 
 #wrapper {
-  display: flex;
-  justify-content: center;
-}
-
-.colors {
-  display: flex;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 .colorBox {
-  padding: 90px;
+  width: 30%;
+  padding-bottom: 30%;
   margin: 10px;
-  border-radius: 20px;
+  border-radius: 20%;
+  float: left;
 }
 
 .hidden {
